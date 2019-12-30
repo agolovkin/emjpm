@@ -13,6 +13,8 @@ spec:
         git/branch: ${BRANCH_NAME}
         git/commit: ${COMMIT}
         gitlab/job: "${JOB_ID}"
+        owner: emjpm
+        team: emjpm
     spec:
       containers:
         - name: dataset

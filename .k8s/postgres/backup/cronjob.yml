@@ -8,6 +8,8 @@ metadata:
     git/branch: ${BRANCH_NAME}
     git/commit: ${COMMIT}
     gitlab/job: "${JOB_ID}"
+    owner: emjpm
+    team: emjpm
 spec:
   schedule: "0 7 * * *"
   jobTemplate:

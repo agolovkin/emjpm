@@ -2,6 +2,11 @@ image:
   repository: registry.gitlab.factory.social.gouv.fr/socialgouv/emjpm/api
   tag: latest
 
+labels:
+  app.kubernetes.io/part-of: api
+  owner: emjpm
+  team: emjpm
+
 deployment:
   resources:
     limits:

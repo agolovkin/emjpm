@@ -2,6 +2,11 @@ image:
   repository: registry.gitlab.factory.social.gouv.fr/socialgouv/emjpm/graphql-server
   tag: latest
 
+labels:
+  app.kubernetes.io/part-of: graphql-server
+  owner: emjpm
+  team: emjpm
+
 deployment:
   resources:
     limits:

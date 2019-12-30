@@ -8,8 +8,18 @@ metadata:
     git/branch: ${BRANCH_NAME}
     git/commit: ${COMMIT}
     gitlab/job: "${JOB_ID}"
+    owner: emjpm
+    team: emjpm
 spec:
   template:
+    metadata:
+      labels:
+        app: ${K8S_PROJECT}-restore-${BRANCH_HASH}
+        git/branch: ${BRANCH_NAME}
+        git/commit: ${COMMIT}
+        gitlab/job: "${JOB_ID}"
+        owner: emjpm
+        team: emjpm
     spec:
       containers:
         - name: ${K8S_PROJECT}-restore-${BRANCH_HASH}
