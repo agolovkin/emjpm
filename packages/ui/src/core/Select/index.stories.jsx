@@ -14,6 +14,11 @@ const options = [
   { label: 'Vanilla', value: 'vanilla' },
 ];
 
+export const RoundedSelect = () => {
+  const [selectedValue, changeValue] = useState(false);
+  return <Select options={options} value={selectedValue} onChange={(selectedOption) => changeValue(selectedOption)} />;
+};
+
 export const SelectStory = () => {
   const [selectedValue, changeValue] = useState(false);
   return <Select options={options} value={selectedValue} onChange={(selectedOption) => changeValue(selectedOption)} />;

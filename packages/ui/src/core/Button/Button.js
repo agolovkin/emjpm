@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Box, Button as RebassButton } from 'rebass';
+import { Box, Button as RebassButton, Flex } from 'rebass';
 
 import { Spinner } from '../Spinner';
 import { buttonStyle } from './style';
@@ -22,7 +22,7 @@ const content = (props) => {
 };
 
 const Button = (props) => {
-  const { isLoading, children } = props;
+  const { isLoading, children, renderIcon } = props;
   return (
     <RebassButton sx={buttonStyle} {...props}>
       {isLoading && (
@@ -30,9 +30,10 @@ const Button = (props) => {
           <Spinner variant="bgLight" />
         </Box>
       )}
-      <Box isLoading={isLoading} sx={content(props)}>
-        {children}
-      </Box>
+      <Flex alignItems="center" flexDirection="row" isLoading={isLoading} sx={content(props)}>
+        {renderIcon && (<Box mr={2} height="20px" width="20px">{renderIcon()}</Box>)}
+        <Box>{children}</Box>
+      </Flex>
     </RebassButton>
   );
 };
@@ -42,10 +43,12 @@ export { Button };
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   isLoading: PropTypes.bool,
+  renderIcon: PropTypes.func,
   variant: PropTypes.string,
 };
 
 Button.defaultProps = {
   isLoading: false,
+  renderIcon: null,
   variant: null,
 };
